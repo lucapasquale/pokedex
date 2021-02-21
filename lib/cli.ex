@@ -7,8 +7,8 @@ defmodule Pokedex.CLI do
 
   defp cleanup_arg(arg) do
     arg
-      |> String.trim
-      |> String.downcase
+    |> String.trim()
+    |> String.downcase()
   end
 
   defp execute_command(["pokemon", name]) do
@@ -18,13 +18,21 @@ defmodule Pokedex.CLI do
     end
   end
 
+  defp execute_command([]) do
+    IO.puts("Please provide a command")
+    list_of_commands()
+  end
+
+  defp execute_command(_unknown) do
+    IO.puts("Invalid command. I don't know what to do.")
+    list_of_commands()
+  end
+
   @commands %{
     "pokemon <name>" => "Searches a Pokemon by name"
   }
 
-  defp execute_command(_unknown) do
-    IO.puts("Invalid command. I don't know what to do.")
-
+  defp list_of_commands() do
     IO.puts("Available commands:\n")
 
     @commands

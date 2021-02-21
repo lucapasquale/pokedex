@@ -1,21 +1,10 @@
 # Pokedex
 
-**TODO: Add description**
+Uses the [PokeAPI](https://pokeapi.co/) to get information from Pokemons
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `pokedex` to your list of dependencies in `mix.exs`:
+Run `mix deps.get` to install the dependencies
 
-```elixir
-def deps do
-  [
-    {:pokedex, "~> 0.1.0"}
-  ]
-end
-```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/pokedex](https://hexdocs.pm/pokedex).
+Run `mix escript.build` to generate an executable CLI, then run with `./pokedex`
 
